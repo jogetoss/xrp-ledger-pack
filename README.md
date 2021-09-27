@@ -1,6 +1,8 @@
 # Description
 
-This repository is meant to serve as a general template for how to set up new repositories in the JogetOSS organization. 
+The XRP Ledger Pack integrates XRPL with Joget, and allows you to design Joget apps that interacts with the XRP Ledger.
+
+Do see [documentation and sample app](https://dev.joget.org/community/display/marketplace/XRP+Ledger+Pack).
 
 # Getting Help
 
