@@ -1,0 +1,127 @@
+[
+    {
+       "title":"@@process.xrplgeneratewallettool.header.config@@",
+       "properties":[
+            {
+                "name":"rippledServer",
+                "label":"@@process.xrplgeneratewallettool.rippledServer@@",
+                "description":"@@process.xrplgeneratewallettool.rippledServer.desc@@",
+                "type":"selectbox",
+                "options" : [{
+                    "value" : "generalMainnet",
+                    "label" : "@@process.xrplgeneratewallettool.rippledServer.generalMainnet@@"
+                },{
+                    "value" : "fullHistoryMainnet",
+                    "label" : "@@process.xrplgeneratewallettool.rippledServer.fullHistoryMainnet@@"
+                },{
+                    "value" : "devnet",
+                    "label" : "@@process.xrplgeneratewallettool.rippledServer.devnet@@"
+                },{
+                    "value" : "testnet",
+                    "label" : "@@process.xrplgeneratewallettool.rippledServer.testnet@@"
+                },{
+                    "value" : "custom",
+                    "label" : "@@process.xrplgeneratewallettool.rippledServer.custom@@"
+                }],
+                "value":"testnet"
+            },
+            {
+                "name":"rippledUrl",
+                "label":"@@process.xrplgeneratewallettool.rippledUrl@@",
+                "type":"textfield",
+                "required":"True",
+                "control_field":"rippledServer",
+                "control_value":"custom",
+                "control_use_regex":"false"
+            },
+            {
+                "name":"fundTestWallet",
+                "label":"@@process.xrplgeneratewallettool.fundTestWallet@@",
+                "type":"checkbox",
+                "value":"true",
+                "options":[
+                    {"value":"true", "label":""}
+                ],
+                "control_field":"rippledServer",
+                "control_value":"testnet|devnet",
+                "control_use_regex":"true"
+            }
+        ]
+    },
+    {
+        "title":"@@process.xrplgeneratewallettool.header.storeToForm@@",
+        "properties":[
+            {
+                "name" : "formDefId",
+                "label" : "@@process.xrplgeneratewallettool.formId@@",
+                "type" : "selectbox",
+                "required":"True",
+                "options_ajax":"[CONTEXT_PATH]/web/json/console/app[APP_PATH]/formsWithCustomTable/options"
+            },
+            {
+                "label": "@@process.xrplgeneratewallettool.header.fieldMapping@@",
+                "type":"header"
+            },
+            {
+                "name":"walletSeedField",
+                "label":"@@process.xrplgeneratewallettool.fieldMapping.walletSeedField@@",
+                "description":"@@process.xrplgeneratewallettool.fieldMapping.walletSeedField.desc@@",
+                "type":"selectbox",
+                "required":"True",
+                "options_ajax_on_change":"formDefId",
+                "options_ajax":"[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options"
+            },
+            {
+                "name":"walletOwnerField",
+                "label":"@@process.xrplgeneratewallettool.fieldMapping.walletOwnerField@@",
+                "type":"selectbox",
+                "options_ajax_on_change":"formDefId",
+                "options_ajax":"[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options"
+            },
+            {
+                "name":"walletOwnerValue",
+                "label":"@@process.xrplgeneratewallettool.fieldMapping.walletOwnerValue@@",
+                "description":"@@process.xrplgeneratewallettool.fieldMapping.walletOwnerValue.desc@@",
+                "type":"textfield"
+            },
+            {
+                "name":"isTestWallet",
+                "label":"@@process.xrplgeneratewallettool.fieldMapping.isTestWallet@@",
+                "type":"selectbox",
+                "options_ajax_on_change":"formDefId",
+                "options_ajax":"[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options"
+            },
+            {
+                "name":"publicKey",
+                "label":"@@process.xrplgeneratewallettool.fieldMapping.publicKey@@",
+                "type":"selectbox",
+                "options_ajax_on_change":"formDefId",
+                "options_ajax":"[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options"
+            },
+            {
+                "name":"xAddress",
+                "label":"@@process.xrplgeneratewallettool.fieldMapping.xAddress@@",
+                "type":"selectbox",
+                "options_ajax_on_change":"formDefId",
+                "options_ajax":"[CONTEXT_PATH]/web/json/console/app[APP_PATH]/form/columns/options"
+            }
+        ]
+    },
+    {
+        "title" : "@@process.xrplgeneratewallettool.header.storeToWorkflowVariable@@",
+        "properties" : [
+            {
+                "name":"wfResponseStatus",
+                "label":"@@process.xrplgeneratewallettool.wfMapping.wfResponseStatus@@",
+                "type":"selectbox",
+                "options_ajax" : "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/workflowVariable/options"
+            },
+            {
+                "name":"wfIsTestWallet",
+                "label":"@@process.xrplgeneratewallettool.wfMapping.wfIsTestWallet@@",
+                "type":"selectbox",
+                "options_ajax" : "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/workflowVariable/options"
+            }
+        ]
+    }
+]

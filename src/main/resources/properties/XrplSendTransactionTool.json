@@ -1,0 +1,89 @@
+[
+    {
+       "title":"@@process.xrplsendtransactiontool.header.config@@",
+       "properties":[
+            {
+                "name":"rippledServer",
+                "label":"@@process.xrplsendtransactiontool.rippledServer@@",
+                "description":"@@process.xrplsendtransactiontool.rippledServer.desc@@",
+                "type":"selectbox",
+                "options" : [{
+                    "value" : "generalMainnet",
+                    "label" : "@@process.xrplsendtransactiontool.rippledServer.generalMainnet@@"
+                },{
+                    "value" : "fullHistoryMainnet",
+                    "label" : "@@process.xrplsendtransactiontool.rippledServer.fullHistoryMainnet@@"
+                },{
+                    "value" : "devnet",
+                    "label" : "@@process.xrplsendtransactiontool.rippledServer.devnet@@"
+                },{
+                    "value" : "testnet",
+                    "label" : "@@process.xrplsendtransactiontool.rippledServer.testnet@@"
+                },{
+                    "value" : "custom",
+                    "label" : "@@process.xrplsendtransactiontool.rippledServer.custom@@"
+                }],
+                "value":"testnet"
+            },
+            {
+                "name":"rippledUrl",
+                "label":"@@process.xrplsendtransactiontool.rippledUrl@@",
+                "type":"textfield",
+                "required":"True",
+                "control_field":"rippledServer",
+                "control_value":"custom",
+                "control_use_regex":"false"
+            }
+        ]
+    },
+    {
+        "title":"@@process.xrplsendtransactiontool.header.transactionDetails@@",
+        "properties":[
+            {
+                "name":"originAddress",
+                "label":"@@process.xrplsendtransactiontool.originAddress@@",
+                "description":"@@process.xrplsendtransactiontool.originAddress.desc@@",
+                "type":"textfield",
+                "required":"True"
+            },
+            {
+                "name":"walletSeed",
+                "label":"@@process.xrplsendtransactiontool.walletSeed@@",
+                "description":"@@process.xrplsendtransactiontool.walletSeed.desc@@",
+                "type":"textfield",
+                "required":"True"
+            },
+            {
+                "name":"destinationAddress",
+                "label":"@@process.xrplsendtransactiontool.destinationAddress@@",
+                "description":"@@process.xrplsendtransactiontool.destinationAddress.desc@@",
+                "type":"textfield",
+                "required":"True"
+            },
+            {
+                "name":"amount",
+                "label":"@@process.xrplsendtransactiontool.amount@@",
+                "description":"@@process.xrplsendtransactiontool.amount.desc@@",
+                "type":"textfield",
+                "required":"True"
+            }
+        ]
+    },
+    {
+        "title" : "@@process.xrplsendtransactiontool.header.storeToWorkflowVariable@@",
+        "properties" : [
+            {
+                "name":"wfResponseStatus",
+                "label":"@@process.xrplsendtransactiontool.wfMapping.wfResponseStatus@@",
+                "type":"selectbox",
+                "options_ajax" : "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/workflowVariable/options"
+            },
+            {
+                "name":"wfTransactionExplorerUrl",
+                "label":"@@process.xrplsendtransactiontool.wfMapping.wfTransactionExplorerUrl@@",
+                "type":"selectbox",
+                "options_ajax" : "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/workflowVariable/options"
+            }
+        ]
+    }
+]

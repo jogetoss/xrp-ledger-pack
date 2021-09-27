@@ -1,0 +1,90 @@
+[
+    {
+       "title":"@@form.xrplwalletloadbinder.header.config@@",
+       "properties":[
+            {
+                "name":"rippledServer",
+                "label":"@@form.xrplwalletloadbinder.rippledServer@@",
+                "description":"@@form.xrplwalletloadbinder.rippledServer.desc@@",
+                "type":"selectbox",
+                "options" : [{
+                    "value" : "generalMainnet",
+                    "label" : "@@form.xrplwalletloadbinder.rippledServer.generalMainnet@@"
+                },{
+                    "value" : "fullHistoryMainnet",
+                    "label" : "@@form.xrplwalletloadbinder.rippledServer.fullHistoryMainnet@@"
+                },{
+                    "value" : "devnet",
+                    "label" : "@@form.xrplwalletloadbinder.rippledServer.devnet@@"
+                },{
+                    "value" : "testnet",
+                    "label" : "@@form.xrplwalletloadbinder.rippledServer.testnet@@"
+                },{
+                    "value" : "custom",
+                    "label" : "@@form.xrplwalletloadbinder.rippledServer.custom@@"
+                }],
+                "value":"testnet"
+            },
+            {
+                "name":"rippledUrl",
+                "label":"@@form.xrplwalletloadbinder.rippledUrl@@",
+                "type":"textfield",
+                "required":"True",
+                "control_field":"rippledServer",
+                "control_value":"custom",
+                "control_use_regex":"false"
+            },
+            {
+                "name":"walletAddress",
+                "label":"@@form.xrplwalletloadbinder.walletAddress@@",
+                "description":"@@form.xrplwalletloadbinder.walletAddress.desc@@",
+                "type":"textfield",
+                "required":"True"
+            }
+        ]
+    },
+    {
+        "title":"@@form.xrplwalletloadbinder.header.mapToFields@@",
+        "properties":[
+            {
+                "name":"isAccountValidatedField",
+                "label":"@@form.xrplwalletloadbinder.mapToFields.isAccountValidatedField@@",
+                "type":"textfield",
+                "required":"True"
+            },
+            {
+                "name":"balanceField",
+                "label":"@@form.xrplwalletloadbinder.mapToFields.balanceField@@",
+                "type":"textfield",
+                "required":"True"
+            },
+            {
+                "name":"lastRecentTxToThisAccField",
+                "label":"@@form.xrplwalletloadbinder.mapToFields.lastRecentTxToThisAccField@@",
+                "description":"@@form.xrplwalletloadbinder.mapToFields.lastRecentTxToThisAccField.desc@@",
+                "type":"textfield"
+            },
+            {
+                "name":"lastRecentTxOfThisAccField",
+                "label":"@@form.xrplwalletloadbinder.mapToFields.lastRecentTxOfThisAccField@@",
+                "description":"@@form.xrplwalletloadbinder.mapToFields.lastRecentTxOfThisAccField.desc@@",
+                "type":"textfield"
+            },
+            {
+                "name":"accountDomainField",
+                "label":"@@form.xrplwalletloadbinder.mapToFields.accountDomainField@@",
+                "type":"textfield"
+            },
+            {
+                "name":"accountEmailHashField",
+                "label":"@@form.xrplwalletloadbinder.mapToFields.accountEmailHashField@@",
+                "type":"textfield"
+            },
+            {
+                "name":"ownerObjCountField",
+                "label":"@@form.xrplwalletloadbinder.mapToFields.ownerObjCountField@@",
+                "type":"textfield"
+            }
+        ]
+    }
+]
